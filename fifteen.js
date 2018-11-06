@@ -85,4 +85,25 @@ window.onload =() =>
 	        return -1;
 	    } 
 	}
+
+	function LEFT(x, y)
+	{
+	    var xx = parseInt(x);
+	    var yy = parseInt(y);
+
+	    if (xx > 0)
+	    {
+	        for (var i = 0; i < children.length; i++) 
+	        {
+	            if (parseInt(children[i].style.left) + 100 == xx && parseInt(children[i].style.top) == yy)
+	            {
+	                return i;
+	            } 
+	        }
+	    }
+	    else 
+	    {
+	        return -1;
+	    }
+	}
 }
