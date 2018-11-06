@@ -51,7 +51,48 @@ window.onload =() =>
 			};
 
 
+	function shuffle()
+	{
+		for (var i=0; i<250; i++)
+        {
+            let rand = parseInt(Math.random()* 100) %4;
+            if (rand == 0)
+            {
+                let mve = UP(space1,space2);
+                if ( mve != -1)
+                {
+                    swap(mve);
+                }
+            }
+            if (rand == 1)
+            {
+                let mve = DOWN(space1,space2);
+                if ( mve != -1) 
+                {
+                    swap(mve);
+                }
+            }
 
+            if (rand == 2)
+            {
+                let mve = LEFT(space1,space2);
+                if ( mve != -1)
+                {
+                    swap(mve);
+                }
+            }
+
+            if (rand == 3)
+            {
+                let mve = RIGHT(space1,space2);
+                if (mve != -1)
+                {
+                    swap(mve);
+                }
+            }
+        }
+	}
+	
 	function swap (pos)
 	{
 		let temp = children[pos].style.top;
@@ -63,7 +104,7 @@ window.onload =() =>
 		space1 = temp;
 	}
 
-	
+
 	function move(pos)
 	{
 		if (LEFT(space1,space2) == (pos-1))
