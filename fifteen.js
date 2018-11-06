@@ -45,4 +45,24 @@ window.onload =() =>
 				this.style.border = "2px solid black";
 				this.style.color = "#000000";
 			};
+
+	function UP (x, y)
+	{
+	    var xx = parseInt(x);
+	    var yy = parseInt(y);
+	    if (yy > 0)
+	    {
+	        for (var i=0; i<children.length; i++)
+	        {
+	            if (parseInt(children[i].style.top) + 100 == yy && parseInt(children[i].style.left) == xx) 
+	            {
+	                return i;
+	            }
+	        } 
+	    }
+	    else 
+	    {
+	        return -1;
+	    }
+	}
 }
