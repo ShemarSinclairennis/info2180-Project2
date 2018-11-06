@@ -20,6 +20,8 @@ window.onload =() =>
 		restartbutton.type ="submit"
 		restartbutton.value ="Restart Game"
 
+		document.body.appendChild(restartbutton);
+
 	for (let i=0; i< children.length; i++)
 		{
 
