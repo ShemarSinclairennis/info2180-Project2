@@ -56,6 +56,19 @@ window.onload =() =>
 			};
 
 
+	function slide ()
+			{
+				if(move(parseInt(this.innerHTML)))
+				{
+					swap(this.innerHTML-1);
+					if(finish())
+					{
+						Gamewin();
+					}
+					return;
+				}
+			};
+			
 	function shuffle()
 	{
 		for (var i=0; i<250; i++)
