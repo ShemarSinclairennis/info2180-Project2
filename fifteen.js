@@ -60,6 +60,11 @@ window.onload =() =>
 				this.style.color = "#000000";
 			};
 
+	function restart()
+	{
+		location.reload();
+	}
+
 
 	function Gamewin()
 	{
