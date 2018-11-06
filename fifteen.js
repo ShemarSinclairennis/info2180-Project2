@@ -48,6 +48,32 @@ window.onload =() =>
 				this.style.color = "#000000";
 			};
 
+
+
+	function move(pos)
+	{
+		if (LEFT(space1,space2) == (pos-1))
+		{
+			return true;
+		}
+
+		if(DOWN(space1,space2) == (pos-1))
+		{
+			return true;
+		}
+
+		if(UP(space1,space2) == (pos-1))
+		{
+			return true;
+		}
+
+		if(RIGHT(space1,space2) == (pos-1))
+		{
+			return true;
+		}
+	}
+	
+
 	function UP (x, y)
 	{
 	    var xx = parseInt(x);
