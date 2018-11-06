@@ -34,6 +34,7 @@ window.onload =() =>
 			}
 			children[i].addEventListener("mouseover",red_zone);
 			children[i].addEventListener("mouseout",black_zone);
+			children[i].addEventListener("click",slide);
 			
 		  }
 
@@ -68,7 +69,7 @@ window.onload =() =>
 					return;
 				}
 			};
-			
+
 	function shuffle()
 	{
 		for (var i=0; i<250; i++)
