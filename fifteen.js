@@ -28,18 +28,17 @@ window.onload =() =>
 				y+=100;
 				x=0;
 			}
-			children[i].addEventListener("mouseover",red);
-			children[i].addEventListener("mouseout",black);
+			children[i].addEventListener("mouseover",red_zone);
+			children[i].addEventListener("mouseout",black_zone);
 			
 		  }
 
 	function red_zone()
 			{
-				if(move(parseInt(this.innerHTML)))
-				{
+				
 					this.style.border = "2px solid red";
 					this.style.color = "#006600";
-				}
+				
 			};
 	function black_zone()
 			{
