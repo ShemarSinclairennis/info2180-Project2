@@ -30,4 +30,18 @@ window.onload =() =>
 			}
 			
 		  }
+
+	function red_zone()
+			{
+				if(move(parseInt(this.innerHTML)))
+				{
+					this.style.border = "2px solid red";
+					this.style.color = "#006600";
+				}
+			};
+	function black_zone()
+			{
+				this.style.border = "2px solid black";
+				this.style.color = "#000000";
+			};
 }
