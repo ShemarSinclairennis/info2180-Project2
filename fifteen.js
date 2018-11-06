@@ -11,6 +11,8 @@ window.onload =() =>
 	let x=0;
 	let y =0;
 	let count =0;
+	let space1= '300px';
+	let space2= '300px';
 
 	for (let i=0; i< children.length; i++)
 		{
