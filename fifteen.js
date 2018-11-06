@@ -58,6 +58,15 @@ window.onload =() =>
 			};
 
 
+	function Gamewin()
+	{
+		let body = document.getElementsByTagName('body');
+		body[0].style.backgroundColor = "#FF0000";
+		b_ground = 10;
+		timer = setTimeout(change,100);
+	}
+
+	
 	function finish()
 	{
 		let flag = true;
