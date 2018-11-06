@@ -16,6 +16,9 @@ window.onload =() =>
 	let space1= '300px';
 	let space2= '300px';
 	var b_ground;
+	var restartbutton = document.createElement("input")
+		restartbutton.type ="submit"
+		restartbutton.value ="Restart Game"
 
 	for (let i=0; i< children.length; i++)
 		{
