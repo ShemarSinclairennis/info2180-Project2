@@ -7,6 +7,8 @@ window.onload =() =>
 	let p_area = document.getElementById("puzzlearea");
 	let children = document.querySelectorAll("#puzzlearea div")
 
+	let shufflebutton = document.getElementById("shufflebutton")
+
 
 	let x=0;
 	let y =0;
@@ -34,6 +36,9 @@ window.onload =() =>
 			children[i].addEventListener("mouseout",black_zone);
 			
 		  }
+
+		  	shufflebutton.addEventListener("click",shuffle);
+
 
 	function red_zone()
 			{
@@ -92,7 +97,7 @@ window.onload =() =>
             }
         }
 	}
-	
+
 	function swap (pos)
 	{
 		let temp = children[pos].style.top;
