@@ -61,12 +61,12 @@ window.onload =() =>
 	function Gamewin()
 	{
 		let body = document.getElementsByTagName('body');
-		body[0].style.backgroundColor = "#FF0000";
+		body[0].style.backgroundColor = "grey";
 		b_ground = 10;
 		timer = setTimeout(change,100);
 	}
 
-	
+
 	function finish()
 	{
 		let flag = true;
@@ -82,6 +82,32 @@ window.onload =() =>
 			}
 		}
 		return flag;
+	}
+
+	function change()
+	{
+    	let text = document.getElementsByClassName("explanation");
+   	 	b_ground --;
+   		if (b_ground == 0)
+	    {
+	        var body = document.getElementsByTagName('body');
+	        body[0].style.backgroundColor = "#FFFFFF";
+	        text[0].innerHTML = "CONGRATULATION YOU WIN";
+	        text[1].innerHTML = "CONGRATULATION YOU WIN";
+	        stoptime();
+	        return;
+	    }
+	    if (b_ground % 2)
+	    {
+	        var body = document.getElementsByTagName('body');
+	        body[0].style.backgroundColor = "grey";    
+	    }
+	    else
+	    {
+        	var body = document.getElementsByTagName('body');
+        	body[0].style.backgroundColor = "green";
+    	}
+    	timer = setTimeout(change, 100);
 	}
 
 
