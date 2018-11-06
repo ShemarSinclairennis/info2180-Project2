@@ -15,6 +15,7 @@ window.onload =() =>
 	let count =0;
 	let space1= '300px';
 	let space2= '300px';
+	var b_ground;
 
 	for (let i=0; i< children.length; i++)
 		{
@@ -55,6 +56,24 @@ window.onload =() =>
 				this.style.border = "2px solid black";
 				this.style.color = "#000000";
 			};
+
+
+	function finish()
+	{
+		let flag = true;
+		for (let i = 0; i<children.length; i++)
+		{
+			let a = parseInt(children[i].style.top);
+			let b = parseInt(children[i].style.left);
+
+			if (b !=(i%4*100) || a != parseInt(i/4)*100)
+			{
+				flag=false;
+				break;
+			}
+		}
+		return flag;
+	}
 
 
 	function slide ()
