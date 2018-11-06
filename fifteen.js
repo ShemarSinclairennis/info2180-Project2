@@ -4,24 +4,33 @@
 window.onload =() =>
 
 {
+	//Variables added for tile pieces
 	let p_area = document.getElementById("puzzlearea");
 	let children = document.querySelectorAll("#puzzlearea div")
-
+	//Variable added for shuffle button 
 	let shufflebutton = document.getElementById("shufflebutton")
 
-
+	//Wariables added to act as axis for tiles
 	let x=0;
 	let y =0;
 	let count =0;
+
+	//Space variables added to assist move function 
 	let space1= '300px';
 	let space2= '300px';
+
+	//Variable added to assist game win and change function
 	var b_ground;
+
+	//Variable added to add a restart button to web page
 	var restartbutton = document.createElement("input")
 		restartbutton.type ="submit"
 		restartbutton.value ="Restart Game"
-
+	//Appends the restartbutton created to web page
 		document.body.appendChild(restartbutton);
 
+
+	//For loop created to help positioning of tiles 
 	for (let i=0; i< children.length; i++)
 		{
 
@@ -29,6 +38,7 @@ window.onload =() =>
 
 			children[i].style.left = x+"px";  
 			children[i].style.top = y+"px";
+			//Line of code to help position of image in each tile
 			children[i].style.backgroundPosition = `${-x}px ${-y}px`;
 			x +=100;
 			count +=1;
@@ -38,17 +48,21 @@ window.onload =() =>
 				y+=100;
 				x=0;
 			}
+
+			//Event listeners added for hovering operations
 			children[i].addEventListener("mouseover",red_zone);
 			children[i].addEventListener("mouseout",black_zone);
+
+			//Event listener added to move tiles on click
 			children[i].addEventListener("click",slide);
 			
 		  }
-
+		  	//Event listners added to allow shuffle and restart button to operate
 		  	shufflebutton.addEventListener("click",shuffle);
 		  	restartbutton.addEventListener("click",restart);
 
 
-
+	//Red_zone and Black_zone functions added for hovering effect
 	function red_zone()
 			{
 				if(move(parseInt(this.innerHTML)))
@@ -64,12 +78,14 @@ window.onload =() =>
 				this.style.color = "#000000";
 			};
 
+
+	//Restart function added to restart game
 	function restart()
 	{
 		location.reload();
 	}
 
-
+	//Functions added to help extra feature (changing background)
 	function Gamewin()
 	{
 		let body = document.getElementsByTagName('body');
@@ -105,7 +121,7 @@ window.onload =() =>
 	        var body = document.getElementsByTagName('body');
 	        body[0].style.backgroundColor = "#FFFFFF";
 	        text[0].innerHTML = "CONGRATULATION YOU WIN";
-	        text[1].innerHTML = "CONGRATULATION YOU WIN";
+	        text[1].innerHTML = "If you would like to play again ,select Restart Game";
 	        stoptime();
 	        return;
 	    }
@@ -122,7 +138,9 @@ window.onload =() =>
     	timer = setTimeout(change, 100);
 	}
 
+	//Extra feature functions end here
 
+	//Function to allow tiles to chagned their position
 	function slide ()
 			{
 				if(move(parseInt(this.innerHTML)))
@@ -136,6 +154,7 @@ window.onload =() =>
 				}
 			};
 
+	//Shuffle allowinng functions to randomly chagne position 
 	function shuffle()
 	{
 		for (var i=0; i<250; i++)
@@ -178,6 +197,7 @@ window.onload =() =>
         }
 	}
 
+	//Helper function for slide and shuffle
 	function swap (pos)
 	{
 		let temp = children[pos].style.top;
@@ -190,6 +210,8 @@ window.onload =() =>
 	}
 
 
+
+	//Main movement function 
 	function move(pos)
 	{
 		if (LEFT(space1,space2) == (pos-1))
@@ -281,7 +303,8 @@ window.onload =() =>
 	    var yy = parseInt(y);
 	    if (xx < 300)
 	    {
-	        for (var i =0; i<children.length; i++){
+	        for (var i =0; i<children.length; i++)
+	        {
 	            if (parseInt(children[i].style.left) - 100 == xx && parseInt(children[i].style.top) == yy) 
 	            {
 	                return i;
@@ -293,6 +316,4 @@ window.onload =() =>
 	        return -1;
 	    } 
 	}
-
-
 }
