@@ -45,6 +45,8 @@ window.onload =() =>
 		  }
 
 		  	shufflebutton.addEventListener("click",shuffle);
+		  	restartbutton.addEventListener("click",restart);
+
 
 
 	function red_zone()
