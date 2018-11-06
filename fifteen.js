@@ -43,6 +43,7 @@ window.onload =() =>
 					this.style.color = "#006600";
 				}
 			};
+
 	function black_zone()
 			{
 				this.style.border = "2px solid black";
@@ -51,6 +52,18 @@ window.onload =() =>
 
 
 
+	function swap (pos)
+	{
+		let temp = children[pos].style.top;
+		children[pos].style.top= space2;
+		space2 = temp;
+
+		temp=children[pos].style.left;
+		children[pos].style.left = space1;
+		space1 = temp;
+	}
+
+	
 	function move(pos)
 	{
 		if (LEFT(space1,space2) == (pos-1))
