@@ -73,7 +73,7 @@ window.onload =() =>
 	function Gamewin()
 	{
 		let body = document.getElementsByTagName('body');
-		body[0].style.backgroundColor = "grey";
+		body[0].style.backgroundColor = "#D3D3D3";
 		b_ground = 10;
 		timer = setTimeout(change,100);
 	}
@@ -112,12 +112,12 @@ window.onload =() =>
 	    if (b_ground % 2)
 	    {
 	        var body = document.getElementsByTagName('body');
-	        body[0].style.backgroundColor = "grey";    
+	        body[0].style.backgroundColor = "#D3D3D3";    
 	    }
 	    else
 	    {
         	var body = document.getElementsByTagName('body');
-        	body[0].style.backgroundColor = "green";
+        	body[0].style.backgroundColor = "#01FEED";
     	}
     	timer = setTimeout(change, 100);
 	}
