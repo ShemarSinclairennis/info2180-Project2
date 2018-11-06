@@ -28,6 +28,8 @@ window.onload =() =>
 				y+=100;
 				x=0;
 			}
+			children[i].addEventListener("mouseover",red);
+			children[i].addEventListener("mouseout",black);
 			
 		  }
 
